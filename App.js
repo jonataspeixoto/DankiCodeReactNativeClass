@@ -1,40 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react'
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
+import Header from './components/Header.js';
+import Body from './components/Body.js';
+
 
 export default class App extends React.Component {
-  Header = () => {
-    return(
-      <Text>Home | Sobre | Contato</Text>
-    );
-  }
-  
-  Body = () => {
-    return(
-      <Text>Conteúdo do meu app.</Text>
-    );
-  }
-
-  Footer = () => {
-    return(
-      <Text>Rodapé do meu app.</Text>
-    );
-  }
-
   render(){
     return (
       <View style={{marginTop:20}}>
-        <this.Header></this.Header>
-        <this.Body></this.Body>
-        <this.Footer></this.Footer>
-        <Botao></Botao>
+        <Header></Header>
+        <Body></Body>
       </View>
     );  
   }
-}
-
-const Botao = () => {
-  return(
-    <Button title='Clique'></Button>
-  );
 }
