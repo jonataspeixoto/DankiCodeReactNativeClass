@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import Constants from 'expo-constants';
 import React from 'react';
 import { Text, View, ScrollView, Button, Platform } from 'react-native';
 import Header from './components/Header.js';
@@ -12,9 +13,8 @@ export default class App extends React.Component {
 
   mostrarConteudo() {
     return (
-      <View>
-        <StatusBar hidden/>
-        <Text>olá!</Text>
+      <View style={{marginTop: Constants.statusBarHeight}}>
+        <Text>Olá da Danki</Text>
       </View>
     );
   }
