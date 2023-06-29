@@ -4,33 +4,35 @@ import Header from './components/Header.js';
 import Body from './components/Body.js';
 
 export default class App extends React.Component {
-  
-  constructor(props){
+
+  constructor(props) {
     super(props);
-    this.mostrarTexto = true;
-    this.mostrarBotaoComTexto = true;
+    this.mostrarHeader = true;
   }
 
-  render(){
+  mostrarConteudo() {
+    var mostrarBody = 1;
+    if (this.mostrarHeader && mostrarBody == 1) {
+      return (
+        <View>
+          <Header></Header>
+          <Body></Body>
+        </View>
+      );
+    } else {
+      return (
+        <Body></Body>
+      );
+    }
+  }
 
+  render() {
     return (
-      <ScrollView style={{marginTop:20, flex:1}}>
+      <ScrollView style={{ marginTop: 20, flex: 1 }}>
         {
-          (this.mostrarTexto)
-          ?
-          <Text>Texto</Text>
-          :
-          <View></View>
+          this.mostrarConteudo()
         }
-        {
-          (this.mostrarBotaoComTexto)
-          ?
-          <Button title="Botao com texto"></Button>
-          :
-          <Button title="Botao sem texto"></Button>
-        }
-
       </ScrollView>
-    );  
+    )
   }
 }
