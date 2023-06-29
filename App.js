@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, ScrollView, Button, Platform } from 'react-native';
 import Header from './components/Header.js';
@@ -10,16 +11,10 @@ export default class App extends React.Component {
   }
 
   mostrarConteudo() {
-    var conteudo = "";
-    
-    if(Platform.OS == "android"){
-      conteudo = "Olá! Você está utilizando android!"
-    } else{
-      conteudo = "Olá, você é usuário iOS!"
-    }
     return (
       <View>
-        <Text>{conteudo}</Text>
+        <StatusBar hidden/>
+        <Text>olá!</Text>
       </View>
     );
   }
