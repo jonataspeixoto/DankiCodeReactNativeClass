@@ -1,23 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import Body from './components/Body';
 
-export default function App(){
+export default class App extends React.Component {
 
-  var componente = [];
+  constructor(props) {
+    super(props);
+    this.body = new Body();
 
-  for (var i = 1990; i <= 2020; i++){
-    componente.push(<Text>Selecione: {i}</Text>)
+    this.body.name = "Felipe"
   }
 
-  return (
-    <View style={{marginTop: 30}}>
-      {
-        componente.map((val) => {
-          return(val);
-        })
-      }
+  render() {
+    <View style={{ marginTop: 30 }}>
+      <Body></Body>
     </View>
-  )
-  
+  }
 }
