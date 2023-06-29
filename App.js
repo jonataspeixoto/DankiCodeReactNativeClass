@@ -4,28 +4,19 @@ import { Text, View, StyleSheet } from 'react-native';
 
 export default function App(){
 
-  var nome = "mario";
+  var componente = [];
 
-  var numero = 10;
-  var conteudo = <Text>Danki Code</Text>
-
-  // == igual
-  // != diferente
-
-  // <= menor ou igual
-  // >= maior ou igual
-
-  // > maior
-  // < menor
-
-  if (nome == "guilherme" || numero == 10){
-    conteudo = <Text>{nome}</Text>
+  for (var i = 1990; i <= 2020; i++){
+    componente.push(<Text>Selecione: {i}</Text>)
   }
 
   return (
     <View style={{marginTop: 30}}>
-      <StatusBar hidden/>
-      {conteudo}
+      {
+        componente.map((val) => {
+          return(val);
+        })
+      }
     </View>
   )
   
