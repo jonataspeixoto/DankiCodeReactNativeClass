@@ -8,7 +8,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.mostrarHeader = true;
-    // LogBox.ignoreAllLogs(true);
+    LogBox.ignoreAllLogs(true);
     console.warn("Testes");
   }
 
