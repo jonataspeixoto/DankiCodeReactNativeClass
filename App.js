@@ -1,26 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import Constants from 'expo-constants';
-import { Text, View, ScrollView, Button, Platform } from 'react-native';
-import Header from './components/Header.js';
-import Body from './components/Body.js';
+import { Text, View, StyleSheet } from 'react-native';
 
 export default function App(){
 
-  //String: "Guilherme" (texto)
-  //Int: 10 (Números inteiros)
-  //Double: 10.9 (Números com vírgula/quebrados)
-  //Boolean: true/false (Verdadeiro ou Falso)
+  var nome = "mario";
 
-  const idade = 27
+  var numero = 10;
+  var conteudo = <Text>Danki Code</Text>
 
-  var nome = "Guilherme";
+  // == igual
+  // != diferente
 
-  let cidade = "Floripa"
+  // <= menor ou igual
+  // >= maior ou igual
+
+  // > maior
+  // < menor
+
+  if (nome == "guilherme" || numero == 10){
+    conteudo = <Text>{nome}</Text>
+  }
 
   return (
-    <View style={{marginTop: Constants.statusBarHeight}}>
-      <Text>O {nome} mora em {cidade} e tem {idade} anos</Text>
+    <View style={{marginTop: 30}}>
+      <StatusBar hidden/>
+      {conteudo}
     </View>
   )
   
