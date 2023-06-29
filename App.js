@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView, Button } from 'react-native';
+import { Text, View, ScrollView, Button, LogBox } from 'react-native';
 import Header from './components/Header.js';
 import Body from './components/Body.js';
 
@@ -8,6 +8,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.mostrarHeader = true;
+    // LogBox.ignoreAllLogs(true);
+    console.warn("Testes");
   }
 
   mostrarConteudo() {
