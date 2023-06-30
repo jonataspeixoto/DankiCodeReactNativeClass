@@ -1,15 +1,40 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 import Body from './components/Body';
 
-export default function App () {
-  return (
-    <View style={{ marginTop: 30 }}>
-      <Body texto = "Aqui é um texto 1" titulo = "clique aqui - danki code 1" ></Body>
-      <Body texto = "Aqui é um texto 2" titulo = "clique aqui - danki code 2" ></Body>
-      <Body texto = "Aqui é um texto 3" titulo = "clique aqui - danki code 3" ></Body>
-      <Body texto = "Aqui é um texto 4" titulo = "clique aqui - danki code 4" ></Body>
-    </View>
-  )
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      contador: 0,
+      pagina: "home"
+    }
+
+    setInterval(() => {
+      this.setState({ pagina: "contato" });
+    }, 2000)
+  }
+
+  alterarAba = (pagina) =>{
+    this.setState({pagina: pagina})
+  }
+
+  render() {
+    if (this.state.pagina == "home") {
+      return (
+        <View style={{ marginTop: 30 }}>
+          <View><Text>Home</Text></View>
+          <Button onPress={()=>this.alterarAba('contato')} title = "Clique para ir ao contato"></Button>
+        </View>
+      );
+    } else if (this.state.pagina == "contato") {
+      return (
+        <View style={{ marginTop: 30 }}>
+          <View><Text>Contato</Text></View>
+          <Button onPress={()=>this.alterarAba('home')} title = "Clique para ir a home"></Button>
+        </View>);
+    }
+  }
 }
