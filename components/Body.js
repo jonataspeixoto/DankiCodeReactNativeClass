@@ -1,23 +1,20 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, Button } from 'react-native';
 import styleExterno from '../styles';
 
-export default class Body extends React.Component{
+const Body = (props) => {
 
-    constructor(props){
-        super(props);
-        this.nome = "Guilherme";
+    function teste(){
+        return (<Text>Exemplo</Text>);
     }
 
-    chamarNome(){
-        return (<Text>{this.nome}</Text>)
-    }
+    return(
+        <View>
+            {teste()}
+            <Text>{props.texto}</Text>
+            <Button title = {props.titulo}></Button>
+        </View>
+    )
+};
 
-    render(){
-        return(
-            <View>
-                {chamarNome()}
-            </View>
-        )
-    }
-}
+export default Body;
